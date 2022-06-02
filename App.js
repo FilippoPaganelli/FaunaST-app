@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
@@ -6,8 +6,9 @@ import {
   View,
   SafeAreaView,
 } from 'react-native';
-import MapView, {PROVIDER_GOOGLE, Geojson} from 'react-native-maps';
-import anomalyData from './assets/geojsons/anomaly_map_2022-01-20 copy';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import Toggle from './components/toggle';
+const rasterImg = require('./assets/rasters/anomaly_raster_test.png');
 
 const OdenseField = {
   latitude: 55.34326238509698,
@@ -16,36 +17,25 @@ const OdenseField = {
   longitudeDelta: 0.0055,
 };
 
-// const anomalyData = {
-//   type: 'FeatureCollection',
-//   name: 'anomaly_map_2022-01-20',
-//   features: [
-//     {
-//       type: 'Feature',
-//       properties: {FID: 0, Anomaly: 0.25961349646552434},
+const overlay = {
+  upLeft: {lat: 55.34510282879997 - 0.00005, lon: 10.280531980097294 - 0.00032},
+  downRight: {
+    lat: 55.34193087789771 - 0.00005,
+    lon: 10.2831357344985 + 0.00008,
+  },
 
-//       geometry: {
-//         style: {
-//           fill: '#fff',
-//         },
-//         type: 'Polygon',
-//         coordinates: [
-//           [
-//             [10.280459261767685, 55.345178004011672],
-//             [10.280459261767685, 55.345204488444203],
-//             [10.280504890774743, 55.345204488444203],
-//             [10.280504890774743, 55.345178004011672],
-//             [10.280459261767685, 55.345178004011672],
-//           ],
-//         ],
-//       },
-//     },
-//   ],
-// };
+  image: rasterImg,
+};
 
 export default function App() {
   const [startLocation, setStartLocation] = useState(OdenseField);
+  const [overlayOpacity, setOverlayOpacity] = useState(0);
+  const [overlayCoords, setOverlayCoords] = useState({
+    upLeft: overlay.upLeft,
+    downRight: overlay.downRight,
+  });
   const mapRef = useRef(null);
+  let toggled = false;
 
   function goToField() {
     mapRef.current.animateToRegion(startLocation, 1 * 1000);
@@ -58,20 +48,55 @@ export default function App() {
         style={styles.map}
         initialRegion={startLocation}
         provider={PROVIDER_GOOGLE}
-        mapType="hybrid"
+        mapType="satellite"
         userInterfaceStyle="dark"
         pitchEnabled={false}
         rotateEnabled={false}>
-        <Geojson geojson={anomalyData} fillColor="#ff000044" />
+        {/* <Geojson geojson={anomalyData} fillColor="#ff000044" /> */}
+        <MapView.Overlay
+          bearing={2}
+          opacity={overlayOpacity}
+          bounds={[
+            [overlayCoords.downRight.lat, overlayCoords.upLeft.lon],
+            [overlayCoords.upLeft.lat, overlayCoords.downRight.lon],
+          ]}
+          image={overlay.image}
+        />
       </MapView>
+
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           onPress={() => {
             goToField();
           }}
           style={styles.bubble}>
-          <Text style={styles.bubbleText}>{'GO TO FIELD'}</Text>
+          <Text style={styles.bubbleText}>{'Go to field'}</Text>
         </TouchableOpacity>
+
+        <Toggle
+          style={styles.toggleSwitch}
+          text={{
+            on: 'Heatmap',
+            off: 'Satellite',
+            activeTextColor: 'white',
+            inactiveTextColor: '#B7B8BA',
+          }}
+          textStyle={styles.bubbleText}
+          color={{
+            indicator: 'white',
+            active: '#8dda27',
+            inactive: 'grey',
+            activeBorder: 'grey',
+            inactiveBorder: '#8dda27',
+          }}
+          active={false}
+          disabled={false}
+          width={80}
+          radius={23}
+          onValueChange={val => {
+            val ? setOverlayOpacity(0.4) : setOverlayOpacity(0);
+          }}
+        />
       </View>
     </SafeAreaView>
   );
@@ -95,19 +120,16 @@ const styles = StyleSheet.create({
   bubble: {
     elevation: 5,
     backgroundColor: '#8dda27',
-    paddingHorizontal: 18,
-    paddingVertical: 12,
+    paddingHorizontal: 25,
+    paddingVertical: 10,
     borderRadius: 25,
-  },
-  button: {
-    marginTop: 12,
-    paddingHorizontal: 12,
-    alignItems: 'center',
-    marginHorizontal: 10,
+    justifyContent: 'center',
   },
   buttonContainer: {
-    flexDirection: 'column',
+    alignContent: 'center',
+    justifyContent: 'space-evenly',
+    flexDirection: 'row',
+    width: '100%',
     marginVertical: 20,
-    backgroundColor: 'transparent',
   },
 });
