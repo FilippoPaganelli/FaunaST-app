@@ -35,4 +35,4 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 
 | Base view | Heatmap on | Polygon drawing | Description adding |
 | --------- | ---------- | --------------- | ------------------ |
-| <img src="screenshots/base-map.jpg" alt="HomePage" width="100%" height="100%"/> | <img src="screenshots/toggled-overlay.jpg" alt="SideMenu" width="100%" height="100%"/> | <img src="screenshots/polygon-drawing.jpg" alt="CWPage" width="100%" height="100%"/> | <img src="screenshots/polygon-description.jpg" alt="SideMenu" width="100%" height="100%"/> | 
+| <img src="screenshots/base-map.jpg" alt="BaseMap" width="100" height="100%"/> | <img src="screenshots/toggled-overlay.jpg" alt="ToggledOverlay" width="100" height="100%"/> | <img src="screenshots/polygon-drawing.jpg" alt="PolygonDrawing" width="100" height="100%"/> | <img src="screenshots/polygon-description.jpg" alt="PolygonDescription" width="100" height="100%"/> | 
