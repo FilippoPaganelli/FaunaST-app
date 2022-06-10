@@ -29,7 +29,15 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
     │   └── rasters                # (not included) contains raster images assets
     ├── components                 # Components folder
     ├── README.md                  # README.md file
-    └── ...                        # Other, including App.js
+    └── ...                        # Other, including App.js: here is the main code for this app (*)
+
+### App.js structure (*)
+
+- necessary imports
+- global definitions of **the raster image**, **the coordinates of the field in Odense**, **the field in Odense as a location** and **the overlay properties**
+- react states definitions
+- [fun] goToField: recenters the map on the base field
+
 
 ## Screenshots
 

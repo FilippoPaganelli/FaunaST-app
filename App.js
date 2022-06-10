@@ -37,24 +37,21 @@ const overlay = {
 };
 
 export default function App() {
-  const [startLocation, setStartLocation] = useState(OdenseField);
-  const [overlayOpacity, setOverlayOpacity] = useState(0);
-  const [drawingBtnText, setDrawingBtnText] = useState('Draw');
-  const [dialogVisibility, setDialogVisibility] = useState(false);
-  const [drawCoords, setDrawCoords] = useState([OdenseFieldCoords]);
-  const [polygon, setPolygon] = useState(null);
-  const [polygonDesc, setPolygonDesc] = useState('');
-  const [firstPointVisibility, setFirstPointVisibility] = useState(false);
-  const [firstPointCenter, setFirstPointCenter] = useState(OdenseFieldCoords);
+  const [startLocation, setStartLocation] = useState(OdenseField); // initial location of the main MapView
+  const [overlayOpacity, setOverlayOpacity] = useState(0); // 0 -> overlay not visible, 0.4 -> overlay visible with opacity 40%
+  const [drawingBtnText, setDrawingBtnText] = useState('Draw'); // text in the button for drawing -> ['Draw', 'Finish']
+  const [dialogVisibility, setDialogVisibility] = useState(false); // false -> dialog not visible, true -> dialog visible
+  const [drawCoords, setDrawCoords] = useState([OdenseFieldCoords]); // list of coordinates for drawing the polygon in the MapView
+  const [polygonDesc, setPolygonDesc] = useState(''); // keeps the description state every time it changes
+  const [firstPointVisibility, setFirstPointVisibility] = useState(false); // false -> first drawing point not visible, true -> first drawing point visible
+  const [firstPointCenter, setFirstPointCenter] = useState(OdenseFieldCoords); // coordinates to center the first drawing point
   const [overlayCoords, setOverlayCoords] = useState({
     upLeft: overlay.upLeft,
     downRight: overlay.downRight,
-  });
-  const mapRef = useRef(null);
-  const [isDrawing, setIsDrawing] = useState(false);
-  const [isFirstCoord, setIsFirstCoord] = useState(true);
-
-  let drawingPoints = [];
+  }); // upper-left and lower-right corners coordinates for the heatmap overlay
+  const mapRef = useRef(null); // references to call the map's recentering
+  const [isDrawing, setIsDrawing] = useState(false); // true/false -> user is drawing/not drawing the polygon
+  const [isFirstCoord, setIsFirstCoord] = useState(true); // true if the user is about to tap the first polygon coordinate
 
   // function to recenter the MapView on the starting location
   function goToField() {
