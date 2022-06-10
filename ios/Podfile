@@ -19,6 +19,7 @@ target 'FaunaSTapp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+
   target 'FaunaSTappTests' do
     inherit! :complete
     # Pods for testing

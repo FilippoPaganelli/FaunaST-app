@@ -1,3 +1,6 @@
+assets/geojsons/
+assets/rasters/
+
 # OSX
 #
 .DS_Store
