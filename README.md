@@ -18,7 +18,7 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - [**rn-toggle-switch**](https://github.com/prsn/react-native-toggle-switch) v.: ^1.0.2
 - [**react-native-dialog**](https://www.npmjs.com/package/react-native-dialog) v.: ^9.2.2
 
-## Set-up (testing on Android real devide)
+## Set-up (testing on Android real device)
 
 - clone this repo
 - run 'npm install'
