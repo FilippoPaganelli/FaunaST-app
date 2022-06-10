@@ -86,7 +86,7 @@ export default function App() {
   }
 
   // function to update/draw the polygon based on the coordinates tapped by the user
-  function createPolygonCoord(e) {
+  function createPolygonCoords(e) {
     if (isDrawing) {
       const coords = e.nativeEvent.coordinate;
       if (isFirstCoord) {
@@ -123,7 +123,7 @@ export default function App() {
         userInterfaceStyle="dark"
         pitchEnabled={false}
         rotateEnabled={false}
-        onPress={e => createPolygonCoord(e)}>
+        onPress={e => createPolygonCoords(e)}>
         {/* circle component to show the first point of the user selection */}
         <Circle
           center={firstPointCenter}
