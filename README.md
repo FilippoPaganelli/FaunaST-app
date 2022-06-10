@@ -18,6 +18,14 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - [**rn-toggle-switch**](https://github.com/prsn/react-native-toggle-switch) v.: ^1.0.2
 - [**react-native-dialog**](https://www.npmjs.com/package/react-native-dialog) v.: ^9.2.2
 
+## Set-up (testing on Android real devide)
+
+- clone this repo
+- run 'npm install'
+- add your Google Maps API key in _./android/app/src/main/AndroidManifest.xml_
+- run 'npx react-native run-android' after connecting your device and allowing USB file transfer on it
+- run 'npx react-native start' and hit 'r' or reload from your device
+
 ## Repo Structure
 
     .
@@ -26,7 +34,7 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
     ├── assets                     # Assets folder
     │   ├── fonts                  # Fonts folder
     │   ├── geojsons               # (not included) contains GeoJSON assets
-    │   └── rasters                # (not included) contains raster images assets
+    │   └── rasters                # Contains the test raste image asset
     ├── components                 # Components folder
     ├── README.md                  # README.md file
     └── ...                        # Other, including App.js: here is the main code for this app (*)
@@ -48,7 +56,7 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - Polygon: drawing polygon component
 - Overlay: heatmap overlay component
 - TouchableOpacity: recenter button component
-- Toggle: custom heatmap toggle component _[./components/toggle.js]_
+- Toggle: custom heatmap toggle component (./components/toggle.js)
 - TouchableOpacity: draw button component
 - styling definitions
 ```
