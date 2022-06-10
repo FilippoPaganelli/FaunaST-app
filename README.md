@@ -36,7 +36,7 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - necessary imports
 - global definitions of **the raster image**, **the coordinates of the field in Odense**, **the field in Odense as a location** and **the overlay properties**
 - react states definitions
-- ![#a78de4](fun) goToField: recenters the map on the base field
+- fun `#a78de4` goToField: recenters the map on the base field
 - [fun] handleDiscard: handles user selection "No" from the dialog
 - [fun] handleSave: handles user selection "Yes" from the dialog (!missing API call to backend)
 - [fun] createPolygonCoords: handles a tap on the MapView. If user is drawing, updates the polygon coordinates
