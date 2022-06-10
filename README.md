@@ -28,5 +28,11 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
     │   ├── geojsons               # (not included) contains GeoJSON assets
     │   └── rasters                # (not included) contains raster images assets
     ├── components                 # Components folder
-    ├── README.md                  # Tools and utilities
+    ├── README.md                  # README.md file
     └── ...                        # Other, including App.js
+
+## Screenshots
+
+| Base view                                                        | Heatmap on                                                              | Polygon drawing                                                       | Description adding                                                          |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| <img src="screenshots/base-map.jpg" alt="HomePage" width="25%"/> | <img src="screenshots/toggled-overlay.jpg" alt="SideMenu" width="25%"/> | <img src="screenshots/polygon-drawing.jpg" alt="CWPage" width="25%"/> | <img src="screenshots/polygon-description.jpg" alt="SideMenu" width="25%"/> |
