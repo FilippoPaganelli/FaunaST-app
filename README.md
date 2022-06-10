@@ -7,7 +7,8 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - displays a map view using the Google Maps API (satellite mode)
 - centers the map on a specific field near Odense, Denmark
 - "Go to field" button recenters the map when clicked
-- "Heatmap" switch toggles a heatmap overlay, over the base satellite map
+- "Heatmap/Satellite" switch toggles on/off a heatmap overlay, over the base satellite map
+- "Draw/Finish" button allows the user to start drawing a polygon over the map; when "Finish" is clicked, a dialog asks for a description. When the user taps "Yes", polygon and description are sent to the backend
 
 ## Dependencies
 
@@ -16,3 +17,16 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - [**react-native-maps**](https://github.com/react-native-maps/react-native-maps) v.: ^0.31.1
 - [**rn-toggle-switch**](https://github.com/prsn/react-native-toggle-switch) v.: ^1.0.2
 - [**react-native-dialog**](https://www.npmjs.com/package/react-native-dialog) v.: ^9.2.2
+
+## Repo Structure
+
+    .
+    ├── android                    # Android project directory
+    ├── ios                        # iOS project directory
+    ├── assets                     # Assets folder
+    │   ├── fonts                  # Fonts folder
+    │   ├── geojsons               # (not included) contains GeoJSON assets
+    │   └── rasters                # (not included) contains raster images assets
+    ├── components                 # Components folder
+    ├── README.md                  # Tools and utilities
+    └── ...                        # Other, including App.js
