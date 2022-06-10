@@ -15,3 +15,4 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - [**react-native**](https://reactnative.dev/) v.: 0.68.2
 - [**react-native-maps**](https://github.com/react-native-maps/react-native-maps) v.: ^0.31.1
 - [**rn-toggle-switch**](https://github.com/prsn/react-native-toggle-switch) v.: ^1.0.2
+- [**react-native-dialog**](https://www.npmjs.com/package/react-native-dialog) v.: ^9.2.2
