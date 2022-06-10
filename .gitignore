@@ -1,5 +1,6 @@
 assets/geojsons/
 assets/rasters/
+.env
 
 # OSX
 #

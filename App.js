@@ -64,7 +64,6 @@ export default function App() {
   // function to handle 'No' selection from dialog
   function handleDiscard() {
     drawingPoints = [];
-    setDrawingBtnText('Draw');
     setDialogVisibility(false);
     setDrawCoords([OdenseFieldCoords]);
   }
@@ -85,7 +84,8 @@ export default function App() {
         },
       ],
     };
-    console.log(geojsondata.features[0].properties);
+    setDialogVisibility(false);
+    setDrawCoords([OdenseFieldCoords]);
   }
 
   // function to update/draw the polygon based on the coordinates tapped by the user
