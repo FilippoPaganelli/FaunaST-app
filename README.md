@@ -33,11 +33,25 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 
 ### App.js structure (*)
 
+```js
 - necessary imports
 - global definitions of **the raster image**, **the coordinates of the field in Odense**, **the field in Odense as a location** and **the overlay properties**
 - react states definitions
 - [fun] goToField: recenters the map on the base field
-
+- [fun] handleDiscard: handles user selection "No" from the dialog
+- [fun] handleSave: handles user selection "Yes" from the dialog (!missing API call to backend)
+- [fun] createPolygonCoords: handles a tap on the MapView. If user is drawing, updates the polygon coordinates
+- SafeAreaView: main component, excludes iOS' notch 
+- Dialog: dialog component
+- MapView: main map component
+- Circle: first drawing point component
+- Polygon: drawing polygon component
+- Overlay: heatmap overlay component
+- TouchableOpacity: recenter button component
+- Toggle: custom heatmap toggle component _[./components/toggle.js]_
+- TouchableOpacity: draw button component
+- styling definitions
+```
 
 ## Screenshots
 
