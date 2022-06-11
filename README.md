@@ -18,7 +18,8 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - [**rn-toggle-switch**](https://github.com/prsn/react-native-toggle-switch) v.: ^1.0.2
 - [**react-native-dialog**](https://www.npmjs.com/package/react-native-dialog) v.: ^9.2.2
 
-## Set-up (testing on Android real device)
+## Set-up (Android real device)
+#### ! This app has been tested on a OnePlus 5T running Android 10
 
 - clone this repo
 - run 'npm install'
@@ -41,7 +42,6 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 
 ### App.js structure (*)
 
-```
 - necessary imports
 - global definitions of **the raster image**, **the coordinates of the field in Odense**, **the field in Odense as a location** and **the overlay properties**
 - react states definitions
@@ -59,10 +59,9 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - Toggle: custom heatmap toggle component (./components/toggle.js)
 - TouchableOpacity: draw button component
 - styling definitions
-```
 
 ## Screenshots
 
-| Base view | Heatmap on | Polygon drawing | Description adding |
+| Basemap view | Heatmap toggled | Polygon drawing | Confirm dialog |
 | --------- | ---------- | --------------- | ------------------ |
 | <img src="screenshots/base-map.jpg" alt="BaseMap" width="200" /> | <img src="screenshots/toggled-overlay.jpg" alt="ToggledOverlay" width="200" /> | <img src="screenshots/polygon-drawing.jpg" alt="PolygonDrawing" width="200" /> | <img src="screenshots/polygon-description.jpg" alt="PolygonDescription" width="200" /> | 
