@@ -41,7 +41,6 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 
 ### App.js structure (*)
 
-```
 - necessary imports
 - global definitions of **the raster image**, **the coordinates of the field in Odense**, **the field in Odense as a location** and **the overlay properties**
 - react states definitions
@@ -59,7 +58,6 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - Toggle: custom heatmap toggle component (./components/toggle.js)
 - TouchableOpacity: draw button component
 - styling definitions
-```
 
 ## Screenshots
 
