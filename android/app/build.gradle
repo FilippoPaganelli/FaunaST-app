@@ -232,6 +232,14 @@ android {
         }
     }
     signingConfigs {
+        release{
+            if(project.hasProperty('FAUNASTAPP_UPLOAD_STORE_FILE')){
+                storeFile file(FAUNASTAPP_UPLOAD_STORE_FILE)
+                storePassword FAUNASTAPP_UPLOAD_STORE_PASSWORD
+                keyAlias FAUNASTAPP_UPLOAD_KEY_ALIAS
+                keyPassword FAUNASTAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
@@ -244,9 +252,7 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
