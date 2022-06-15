@@ -7,7 +7,7 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - displays a map view using the Google Maps API (satellite mode)
 - centers the map on a specific field near Odense, Denmark
 - "Go to field" button recenters the map when clicked
-- "Heatmap/Satellite" switch toggles on/off a heatmap overlay, over the base satellite map
+- "Riskmap/Satellite" switch toggles on/off a riskmap overlay, over the base satellite map
 - "Draw/Finish" button allows the user to start drawing a polygon over the map; when "Finish" is clicked, a dialog asks for a description. When the user taps "Yes", polygon and description are sent to the backend
 
 ## Dependencies
@@ -54,14 +54,14 @@ This app is made with React Native for [Fauna Smart Technologies](https://faunas
 - MapView: main map component
 - Circle: first drawing point component
 - Polygon: drawing polygon component
-- Overlay: heatmap overlay component
+- Overlay: riskmap overlay component
 - TouchableOpacity: recenter button component
-- Toggle: custom heatmap toggle component (./components/toggle.js)
+- Toggle: custom riskmap toggle component (./components/toggle.js)
 - TouchableOpacity: draw button component
 - styling definitions
 
 ## Screenshots
 
-| Basemap view | Heatmap toggled | Polygon drawing | Confirm dialog |
+| Basemap view | Riskmap toggled | Polygon drawing | Confirm dialog |
 | --------- | ---------- | --------------- | ------------------ |
 | <img src="screenshots/base-map.jpg" alt="BaseMap" width="200" /> | <img src="screenshots/toggled-overlay.jpg" alt="ToggledOverlay" width="200" /> | <img src="screenshots/polygon-drawing.jpg" alt="PolygonDrawing" width="200" /> | <img src="screenshots/polygon-description.jpg" alt="PolygonDescription" width="200" /> | 
