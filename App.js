@@ -172,7 +172,7 @@ export default function App() {
         <Toggle
           style={styles.toggleSwitch}
           text={{
-            on: 'Heatmap',
+            on: 'Riskmap',
             off: 'Satellite',
             activeTextColor: 'white',
             inactiveTextColor: '#B7B8BA',
