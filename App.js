@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
@@ -48,7 +48,7 @@ export default function App() {
   const [overlayCoords, setOverlayCoords] = useState({
     upLeft: overlay.upLeft,
     downRight: overlay.downRight,
-  }); // upper-left and lower-right corners coordinates for the heatmap overlay
+  }); // upper-left and lower-right corners coordinates for the riskmap overlay
   const mapRef = useRef(null); // references to call the map's recentering
   const [isDrawing, setIsDrawing] = useState(false); // true/false -> user is drawing/not drawing the polygon
   const [isFirstCoord, setIsFirstCoord] = useState(true); // true if the user is about to tap the first polygon coordinate
@@ -168,7 +168,7 @@ export default function App() {
           style={styles.bubble}>
           <Text style={styles.bubbleText}>{'Go to field'}</Text>
         </TouchableOpacity>
-        {/* toggle switch to enable/disable the heatmap overlay */}
+        {/* toggle switch to enable/disable the riskmap overlay */}
         <Toggle
           style={styles.toggleSwitch}
           text={{
